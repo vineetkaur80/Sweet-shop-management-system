@@ -77,11 +77,11 @@ const LoginPage = () => {
   // Helper to pre-fill credentials based on role (Optional convenience)
   useEffect(() => {
     if (role === "admin") {
-      setValue("username", "abhay@mail");
-      setValue("password", "abhay");
+      setValue("username", "vineet@mail");
+      setValue("password", "vineet");
     } else {
-      setValue("username", "abhay_user@mail");
-      setValue("password", "abhay123");
+      setValue("username", "vineet_user@mail");
+      setValue("password", "vineet123");
     }
   }, [role, setValue]);
 
