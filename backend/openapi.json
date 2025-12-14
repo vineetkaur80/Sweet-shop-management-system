@@ -1,0 +1,190 @@
+{
+  "openapi": "3.0.0",
+  "info": { "title": "Sweet Shop API", "version": "1.0.0" },
+  "components": {
+    "schemas": {
+      "Sweet": {
+        "type": "object",
+        "required": ["name", "category", "price", "quantity"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "category": { "type": "string" },
+          "price": { "type": "number" },
+          "quantity": { "type": "integer" }
+        }
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "paths": {
+    "/api/auth/register": {
+      "post": {
+        "summary": "Register new user",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "username": { "type": "string" },
+                  "password": { "type": "string" }
+                }
+              }
+            }
+          }
+        },
+        "responses": { "201": { "description": "User created" } }
+      }
+    },
+    "/api/auth/login": {
+      "post": {
+        "summary": "Login user",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "username": { "type": "string" },
+                  "password": { "type": "string" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns JWT token",
+            "content": {
+              "application/json": {
+                "schema": { "properties": { "token": { "type": "string" } } }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/sweets": {
+      "get": {
+        "summary": "List all sweets",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/Sweet" }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create sweet (Admin only)",
+        "security": [{ "bearerAuth": [] }],
+        "x-role": "admin",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/Sweet" }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Sweet created" },
+          "403": { "description": "Forbidden" }
+        }
+      }
+    },
+    "/api/sweets/search": {
+      "get": {
+        "summary": "Search sweets by name",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/Sweet" }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/sweets/{id}": {
+      "put": {
+        "summary": "Update sweet (Admin only)",
+        "security": [{ "bearerAuth": [] }],
+        "x-role": "admin",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/Sweet" }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Updated" },
+          "403": { "description": "Forbidden" }
+        }
+      },
+      "delete": {
+        "summary": "Delete sweet (Admin only)",
+        "security": [{ "bearerAuth": [] }],
+        "x-role": "admin",
+        "responses": {
+          "200": { "description": "Deleted" },
+          "403": { "description": "Forbidden" }
+        }
+      }
+    },
+    "/api/sweets/{id}/purchase": {
+      "post": {
+        "summary": "Buy sweet (decrements qty)",
+        "security": [{ "bearerAuth": [] }],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "properties": { "quantity": { "type": "integer" } } }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Purchase successful" },
+          "400": { "description": "Out of stock" }
+        }
+      }
+    },
+    "/api/sweets/{id}/restock": {
+      "post": {
+        "summary": "Add stock (Admin only)",
+        "security": [{ "bearerAuth": [] }],
+        "x-role": "admin",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "properties": { "quantity": { "type": "integer" } } }
+            }
+          }
+        },
+        "responses": { "200": { "description": "Restocked" } }
+      }
+    }
+  }
+}

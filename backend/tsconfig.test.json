@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    "types": ["jest"],
+    "esModuleInterop": true,
+    "rootDir": ".",        // 👈 override rootDir so tests folder is allowed
+    "outDir": "./dist/tests",
+    "noEmit": true  // Don't output files for tests
+  },
+  "include": ["src/**/*","tests/**/*"]
+}
