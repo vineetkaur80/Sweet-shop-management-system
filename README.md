@@ -30,7 +30,7 @@ PowerShell (manual API testing)
 
 ## ⚙️ Setup & Run Instructions (Backend)
 Backend
--Framework: Spring Boot 3.2.0
+- Framework: Spring Boot 3.2.0
 -Security: Spring Security + JWT
 -Database: MySQL (Aiven Cloud)
 -ORM: Spring Data JPA / Hibernate
