@@ -28,7 +28,7 @@ Git & GitHub
 PowerShell (manual API testing)
 ## 📂 Project Structure
 
-##⚙️ Setup & Run Instructions (Backend)
+## ⚙️ Setup & Run Instructions (Backend)
 Backend
 -Framework: Spring Boot 3.2.0
 -Security: Spring Security + JWT
