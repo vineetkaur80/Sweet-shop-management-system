@@ -44,4 +44,19 @@ frontend
 - JWT token management
 - Responsive UI design
 
+## 🤖 AI Usage Transparency
+This project was developed with the assistance of AI tools, following best practices for responsible AI usage:
+
+Tools Used
+- GitHub Copilot: Code generation, test scaffolding, and boilerplate reduction
+- AI-Assisted Development: Pattern recognition, code suggestions, and documentation
+Approach
+-1 Test-First Development: Tests were designed manually, then AI helped with implementation
+-2 Code Review: All AI-generated code was reviewed and validated
+-3 x] Frontend Application (React)
+ User Interface (Login, Register, Shop, Admin Panel)
+ API Integration with Axios
+ Cloud Database (Aiven MySQL)e logic written manually, AI used for repetitive tasks
+-4 Transparency: All commits with AI assistance include co-authorship attribution
+
 
