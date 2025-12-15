@@ -36,7 +36,9 @@ Backend
 - ORM: Spring Data JPA / Hibernate
 - Testing: JUnit 5, Mockito, Spring Boot Test
 - Build Tool: Maven
-Frontend 
+
+frontend
+
 - React/Vue/Angular
 - Axios for API calls
 - JWT token management
