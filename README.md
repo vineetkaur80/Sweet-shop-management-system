@@ -27,34 +27,19 @@ VS Code
 Git & GitHub
 PowerShell (manual API testing)
 ## 📂 Project Structure
-sweet-shop-management-system/
-│
-├── backend/
-│ ├── src/
-│ │ ├── app.js
-│ │ ├── server.js
-│ │ ├── controllers/
-│ │ ├── models/
-│ │ ├── routes/
-│ │ ├── middleware/
-│ │ └── tests/
-│ ├── package.json
-│ ├── package-lock.json
-│ └── .env
-│
-└── README.md
+
 ##⚙️ Setup & Run Instructions (Backend)
 ###Backend
-Framework: Spring Boot 3.2.0
-Security: Spring Security + JWT
-Database: MySQL (Aiven Cloud)
-ORM: Spring Data JPA / Hibernate
-Testing: JUnit 5, Mockito, Spring Boot Test
-Build Tool: Maven
+-Framework: Spring Boot 3.2.0
+-Security: Spring Security + JWT
+-Database: MySQL (Aiven Cloud)
+-ORM: Spring Data JPA / Hibernate
+-Testing: JUnit 5, Mockito, Spring Boot Test
+-Build Tool: Maven
 ###Frontend 
-React/Vue/Angular
-Axios for API calls
-JWT token management
-Responsive UI design
+-React/Vue/Angular
+-Axios for API calls
+-JWT token management
+-Responsive UI design
 
 
