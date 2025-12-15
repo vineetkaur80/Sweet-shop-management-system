@@ -81,12 +81,7 @@ Approach
 - 🗑️ Delete sweets from catalog
 - 📦 Restock inventory
 - 📊 View all inventory in admin panel
-## Categories
-- Chocolate
-- Candy
-- Gummy
-- Cookie
-- Cake
+
 Other
 This project follows TDD (Test-Driven Development):
 
