@@ -31,15 +31,15 @@ PowerShell (manual API testing)
 ## ⚙️ Setup & Run Instructions (Backend)
 Backend
 - Framework: Spring Boot 3.2.0
--Security: Spring Security + JWT
--Database: MySQL (Aiven Cloud)
--ORM: Spring Data JPA / Hibernate
--Testing: JUnit 5, Mockito, Spring Boot Test
--Build Tool: Maven
+- Security: Spring Security + JWT
+- Database: MySQL (Aiven Cloud)
+- ORM: Spring Data JPA / Hibernate
+- Testing: JUnit 5, Mockito, Spring Boot Test
+- Build Tool: Maven
 Frontend 
--React/Vue/Angular
--Axios for API calls
--JWT token management
--Responsive UI design
+- React/Vue/Angular
+- Axios for API calls
+- JWT token management
+- Responsive UI design
 
 
